@@ -1,14 +1,9 @@
 // quering for all the buttons
 const buttons = document.querySelectorAll(".drum");
-console.log(buttons);
 
+// add eventListener
 buttons.forEach(button => {
   button.addEventListener("click", () => {
-    handleClick();
+    alert("I got clicked!");
   });
 });
-
-// function when click
-function handleClick() {
-  alert("I got clicked");
-}
