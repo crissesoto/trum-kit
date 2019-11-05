@@ -1,15 +1,12 @@
 // quering for all the buttons
 const buttons = document.querySelectorAll(".drum");
-const letterW = document.querySelector(".w");
 const body = document.querySelector("body");
-
 // add eventListener to all buttons
 buttons.forEach(button => {
   button.addEventListener("click", () => {
     button.classList.toggle("pressed");
     button.style.color = "white";
     let buttonInnerHTML = button.innerHTML;
-
     let sound;
 
     // switch statement
@@ -46,6 +43,8 @@ buttons.forEach(button => {
         alert("This key has not sound");
         break;
     }
+
+    animation(buttonInnerHTML);
   });
 });
 
@@ -84,4 +83,9 @@ body.addEventListener("keydown", e => {
       alert("This key has not sound");
       break;
   }
+  animation(e.key);
 });
+
+// animation function
+
+function animation(currentKey) {}
