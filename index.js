@@ -4,8 +4,6 @@ const body = document.querySelector("body");
 // add eventListener to all buttons
 buttons.forEach(button => {
   button.addEventListener("click", () => {
-    button.classList.toggle("pressed");
-    button.style.color = "white";
     let buttonInnerHTML = button.innerHTML;
     let sound;
 
@@ -88,4 +86,11 @@ body.addEventListener("keydown", e => {
 
 // animation function
 
-function animation(currentKey) {}
+function animation(currentKey) {
+  var activeButton = document.querySelector(`.${currentKey}`);
+  activeButton.classList.add("pressed");
+  // animation
+  setTimeout(() => {
+    activeButton.classList.remove("pressed");
+  }, 100);
+}
